@@ -13,4 +13,9 @@ describe P21 do
       its(:size) { should == 11 }  
     end
   end
+
+  describe "#divisor_sum" do
+    let(:divisor) { 220 }
+    its(:divisor_sum) { should == 284 }
+  end
 end

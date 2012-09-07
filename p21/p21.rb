@@ -6,12 +6,17 @@ class P21
   end
 
   def get_divisors
-    divisors = []
-    max = n / 2
-    divisors << max if even?
+    (1..n).collect do |num|
+      f = n / num
+      f if (f * num) == n && f != n
+    end.compact
   end
 
-  def even?
-    n % 2 == 0
+  def divisor_sum
+    divisors = get_divisors
+    p divisors
+    sum = 0
+    divisors.each { |d| sum += d }
+    sum
   end
 end
